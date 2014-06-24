@@ -1,14 +1,20 @@
-function Map(source) {
-	var XHR = getXMLHttpRequest();
-	XHR.open("GET", "./maps/" + source + ".json", false);
-	XHR.send(null);
+function getMapFile(source) {
+    return function() {
+        var XHR = getXMLHttpRequest();
+        XHR.open("GET", "./maps/" + source + ".json", false);
+        XHR.send(null);
 
-	if(XHR.readyState !== 4 || (XHR.status !== 200 && XHR.status !== 0)) {
-		throw new Error(XHR.status + " Cannot load map: " + source + ".json");
-	}
+        if (XHR.readyState !== 4 || (XHR.status !== 200 && XHR.status !== 0)) {
+            throw new Error(XHR.status + " Cannot load map: " + source + ".json");
+        }
 
-	var mapData = JSON.parse(XHR.responseText);
-	this.tileset = new Tileset(mapData.tileset);
+        return  JSON.parse(XHR.responseText);
+    }
+}
+
+function Map(loadMap) {
+    var mapData = loadMap();
+    this.tileset = new Tileset(mapData.tileset);
 	this.field = mapData.field;
 }
 

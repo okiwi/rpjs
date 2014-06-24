@@ -1,0 +1,33 @@
+{
+  "name": "rpjs",
+  "version": "0.0.0",
+  "description": "rpjs ====",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adrael/rpjs.git"
+  },
+  "author": "",
+  "license": "IS h C",
+  "bugs": {
+    "url": "https://github.com/Adrael/rpjs/issues"
+  },
+  "homepage": "https://github.com/Adrael/rpjs",
+  "dependencies": {
+    "karma": "^0.12.16",
+    "mocha": "^1.20.1"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-mocha": "^0.1.4",
+    "karma-requirejs": "^0.2.2",
+    "mocha": "^1.20.1",
+    "requirejs": "^2.1.14"
+  }
+}
